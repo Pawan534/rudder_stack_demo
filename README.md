@@ -42,3 +42,10 @@ npx wdio --spec .\features\feature-files\rudder-api-login.feature
 > * API Calls using Pactum
 
 ### Cucumber HTML Report:
+
+![image](https://github.com/Pawan534/rudder_stack_demo/assets/8242383/37e03578-a0d1-40a7-b1da-a9d2068f73a8)
+
+
+![image](https://github.com/Pawan534/rudder_stack_demo/assets/8242383/d83818fd-dbce-4dd6-ad8e-b21eb1858c46)
+
+
