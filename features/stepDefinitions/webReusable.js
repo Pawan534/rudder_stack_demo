@@ -1,5 +1,7 @@
 const SourcePage = require('../pages/source.page');
 const SourceDestinationConnection = require('../pages/sourceDestinationConnection.page');
+const CommonEle = require('../pages/commonele.page');
+const Destination =  require('../pages/destination.page')
 
 class WebReuseable {
 
@@ -30,6 +32,23 @@ class WebReuseable {
         await SourcePage.btnLoaderEle.waitForDisplayed({ reverse: true })
 
         await SourcePage.verifySrcAndDesConnected("Source connected to destination successfully", destination);
+    }
+
+    async skip2FABtn () {
+        await CommonEle.laterLink.click()
+        await new Promise(r => setTimeout(r, 50));
+
+        await CommonEle.dashboardBtn.click();
+        await new Promise(r => setTimeout(r, 50));
+    }
+
+    async naviageteToDestinationEventPage (destination) {
+        await $('//a[text()="Destinations"]').click();
+        await browser.pause(500);
+        await Destination.destinationPageEle.isDisplayed();
+        await Destination.clickOnDestination(destination)
+        await Destination.clickOnEventsTab();
+        await browser.pause(1000);
     }
 
 }

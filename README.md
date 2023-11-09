@@ -23,14 +23,18 @@ To run feature file using tag
 npx wdio --web
 npx wdio --api
 
+npx wdio --webP1
+npx wdio --apiP1
+
+npx wdio --webP2
+npx wdio --apiP2
+
 ```
 
 ### Using Tages 
-To run feature file using feature file name
+To run feature file using feature file name, here is the syntax
 ```
-npx wdio --spec .\features\feature-files\rudder-stack-login.feature
-
-npx wdio --spec .\features\feature-files\rudder-api-login.feature
+npx wdio --spec .\features\feature-files\web\web-events-count.feature
 
 ```
 ### Features

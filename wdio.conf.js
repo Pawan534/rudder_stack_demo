@@ -1,5 +1,6 @@
 const reporter = require('multiple-cucumber-html-reporter');
 const { request, settings } = require("pactum");
+const chai = require('chai');
 const fs = require('fs');
 require('dotenv').config();
 const { removeSync } = require('fs-extra');
@@ -12,7 +13,7 @@ const reportDir = `features/reports/`;
 const envVariable = process.env;
 
 
-let featureFilePath = `${sourceSpecDirectory}/*.feature`;
+let featureFilePath = `${sourceSpecDirectory}/**/*.feature`;
 
 
 exports.config = {
@@ -23,7 +24,6 @@ exports.config = {
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
     
-    envVariable: `${envVariable}`,
     //
     // ==================
     // Specify Test Files
@@ -45,12 +45,26 @@ exports.config = {
     ],
 
     suites:{
+        webP1: [
+            './features/feature-files/web/rudder-stack-web-login.feature',
+        ],
+        apiP1: [
+            './features/feature-files/api/login-service-api.feature',
+        ],
+        api2: [
+            './features/feature-files/api/events-service.feature',
+        ],
+        webP2: [
+            './features/feature-files/web/web-events-count.feature',
+        ],
         web: [
-            './features/feature-files/rudder-stack-login.feature',
+            './features/feature-files/web/rudder-stack-web-login.feature',
+            './features/feature-files/web/web-events-count.feature',
         ],
         api: [
-            './features/feature-files/rudder-stack-api.feature',
-        ]
+            './features/feature-files/api/login-service-api.feature',
+            './features/feature-files/api/events-service.feature',
+        ],
     },
 
     // Patterns to exclude.
@@ -96,15 +110,13 @@ exports.config = {
     // loggers:
     // - webdriver, webdriverio
     // - @wdio/browserstack-service, @wdio/devtools-service, @wdio/sauce-service
-    // - @wdio/mocha-framework, @wdio/jasmine-framework
     // - @wdio/local-runner
     // - @wdio/sumologic-reporter
     // - @wdio/cli, @wdio/config, @wdio/utils
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    // logLevels: {
-    //     webdriver: 'info',
-    //     '@wdio/appium-service': 'info'
-    // },
+    logLevels: {
+        webdriver: 'info'
+    },
     //
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
@@ -133,7 +145,6 @@ exports.config = {
     // services: [],
     //
     // Framework you want to run your specs with.
-    // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
     //
     // Make sure you have the wdio adapter package for the specific framework installed
@@ -193,6 +204,7 @@ exports.config = {
         timeout: 200000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false,
+        // <boolean> Enable this config to remove report folder.
         removeFolders: true
     },
 
@@ -260,18 +272,13 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
-
-    
-    
      before: async () => {
-        // const chai = require('chai');
-        // global.wdioExpect = chai.expect;
-        // global.wdioAssert = chai.assert
-        // global.wdioShould = chai.should
-        request.setBaseUrl(envVariable.QC_API_URL);
+        global.wdioExpect = chai.expect;
+        global.wdioAssert = chai.assert
+        global.wdioShould = chai.should
+        // request.setBaseUrl(envVariable.QC_API_URL);
         settings.setReporterAutoRun(false);
+        global.envVar = envVariable;
     },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -377,15 +384,13 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities, results) {
-    // },
     onComplete: async () => {
 
         try{
     
             var options = {
                 theme: 'bootstrap',
-                jsonDir: './features/reports/json/temp',
+                jsonDir: `${jsonTmpDirectory}`,
                 reportPath: './features/reports/report/temp',
                 output: `${reportDir}/report-${currentTime}.html`,
                 reportSuiteAsScenarios: true,
