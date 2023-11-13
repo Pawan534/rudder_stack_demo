@@ -14,8 +14,7 @@ const specCustomHandler = {
             console.log("****")
             spec.post("https://api.rudderstack.com/login");
             spec.withBody({
-                    "email": "mpavan534@gmail.com",
-                    "password": "IndWinWorldCup@123"
+                
             });
         });
     }

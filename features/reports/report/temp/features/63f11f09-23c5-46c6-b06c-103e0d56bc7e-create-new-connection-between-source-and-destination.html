@@ -737,15 +737,15 @@ input#darkCheck:checked ~ label>svg#moon {
                 
             </div>
             <h1>Feature:
-                <small>Validate rudder stack login feature using api calls</small>
+                <small>Create new connection between source and destination</small>
             </h1>
             
                 <p>
                <p><strong>File name:</strong>
-                    login-service-api.feature
+                    rudder-stack-web-login.feature
                 </p>
                 <p><strong>Relative path:</strong>
-                    api/login-service-api.feature</p>
+                    web/rudder-stack-web-login.feature</p>
             
         </div>
 
@@ -783,7 +783,7 @@ input#darkCheck:checked ~ label>svg#moon {
         <tr>
             <td class="chart">
                 <canvas id="scenario-chart"></canvas>
-                <div class="total">5</div>
+                <div class="total">2</div>
             </td>
             <td>
                 <table class="tile_info">
@@ -880,7 +880,7 @@ input#darkCheck:checked ~ label>svg#moon {
                     <i class="fa fa-chrome fa-lg">
                         <span>chrome</span>
                     </i>
-                    119.0.6045.107
+                    119.0.6045.124
                     
                 </span>
             </li>
@@ -934,7 +934,7 @@ input#darkCheck:checked ~ label>svg#moon {
                     
                 </div>
 
-                <h2>Scenario: <small>As a user, I am able to access rudderstack account using login service</small></h2>
+                <h2>Scenario: <small>Verify customer should not login with invalid login details</small></h2>
 
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
@@ -1095,67 +1095,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                     <span class="keyword highlight">Given</span>
 
                                     
-                                        I call the rudderstack login service with valid login details
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When</span>
-
-                                    
-                                        I should see response statusCode as 200
+                                        I login with invalid test@tset.com and pass details
                                         
                                     
 
@@ -1215,7 +1155,67 @@ input#darkCheck:checked ~ label>svg#moon {
                                     <span class="keyword highlight">Then</span>
 
                                     
-                                        I should validate the response body
+                                        I should be on Login page
+                                        
+                                    
+
+                                    
+
+                                </div>
+
+                                
+                                    
+
+                                    
+
+                                    
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                
+                            </div>
+
+                        
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                        
+
+                        
+                            
+                        
+
+                    
+                
+                        
+                            <div class="scenario-step-container">
+
+                                
+                                    
+                                        <div class="label" title="Success">
+                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        </div>
+                                    
+                                
+
+                                <div class="text">
+                                    <span class="keyword highlight">Then</span>
+
+                                    
+                                        I should see Wrong email or password. error on login page
                                         
                                     
 
@@ -1332,7 +1332,7 @@ input#darkCheck:checked ~ label>svg#moon {
                     
                 </div>
 
-                <h2>Scenario: <small>As a user, I should not login with invalid details</small></h2>
+                <h2>Scenario: <small>Verify as a user, I want to create connection between source and destination</small></h2>
 
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
@@ -1349,7 +1349,7 @@ input#darkCheck:checked ~ label>svg#moon {
 
                     
                         <li>
-                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
+                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">9</span>
                         </li>
                     
 
@@ -1493,7 +1493,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                     <span class="keyword highlight">Given</span>
 
                                     
-                                        I call the rudderstack login service using invalid email
+                                        I login with valid  and  details
                                         
                                     
 
@@ -1553,7 +1553,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                     <span class="keyword highlight">When</span>
 
                                     
-                                        I should see response statusCode as 500
+                                        I skip Add an extra layer of security page
                                         
                                     
 
@@ -1613,285 +1613,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                     <span class="keyword highlight">Then</span>
 
                                     
-                                        I should validate the response as Unable to initiate authentication
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">After</span>
-
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel" style="height: auto;">
-            <div class="x_title">
-
-                <div class="tags">
-                    
-                        
-                        
-                    
-                </div>
-
-                <h2>Scenario: <small>As a user, I should not login with invalid details</small></h2>
-
-                <ul class="nav navbar-right panel_toolbox">
-                    <li>
-                        <a class="collapse-link"><i class="fa fa-chevron-down"></i></a>
-                    </li>
-
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                        <li>
-                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
-                        </li>
-                    
-
-                    
-
-                    
-                </ul>
-
-                <div class="clearfix"></div>
-            </div>
-
-            <div class="x_content" style="display: none;">
-                <div class="scenario-step-container"></div>
-                    
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Before</span>
-
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Before</span>
-
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Given</span>
-
-                                    
-                                        I call the rudderstack login service using invalid password
+                                        I should be on Connection page
                                         
                                     
 
@@ -1951,7 +1673,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                     <span class="keyword highlight">When</span>
 
                                     
-                                        I should see response statusCode as 400
+                                        I click on sourceDemo source from the list
                                         
                                     
 
@@ -2011,345 +1733,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                     <span class="keyword highlight">Then</span>
 
                                     
-                                        I should validate the response as Incorrect username or password.
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">After</span>
-
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel" style="height: auto;">
-            <div class="x_title">
-
-                <div class="tags">
-                    
-                        
-                        
-                    
-                </div>
-
-                <h2>Scenario: <small>As a user, I should not login with invalid details</small></h2>
-
-                <ul class="nav navbar-right panel_toolbox">
-                    <li>
-                        <a class="collapse-link"><i class="fa fa-chevron-down"></i></a>
-                    </li>
-
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                        <li>
-                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
-                        </li>
-                    
-
-                    
-
-                    
-                </ul>
-
-                <div class="clearfix"></div>
-            </div>
-
-            <div class="x_content" style="display: none;">
-                <div class="scenario-step-container"></div>
-                    
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Before</span>
-
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Before</span>
-
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Given</span>
-
-                                    
-                                        I call the rudderstack login service using invalid empty password
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When</span>
-
-                                    
-                                        I should see response statusCode as 400
+                                        I should be on Destination page
                                         
                                     
 
@@ -2409,405 +1793,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                     <span class="keyword highlight">Then</span>
 
                                     
-                                        I should validate the response as Password is missing
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">After</span>
-
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel" style="height: auto;">
-            <div class="x_title">
-
-                <div class="tags">
-                    
-                        
-                        
-                    
-                </div>
-
-                <h2>Scenario: <small>As a user, I should not login with invalid details</small></h2>
-
-                <ul class="nav navbar-right panel_toolbox">
-                    <li>
-                        <a class="collapse-link"><i class="fa fa-chevron-down"></i></a>
-                    </li>
-
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                        <li>
-                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
-                        </li>
-                    
-
-                    
-
-                    
-                </ul>
-
-                <div class="clearfix"></div>
-            </div>
-
-            <div class="x_content" style="display: none;">
-                <div class="scenario-step-container"></div>
-                    
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Before</span>
-
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Before</span>
-
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Given</span>
-
-                                    
-                                        I call the rudderstack login service using invalid empty email
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When</span>
-
-                                    
-                                        I should see response statusCode as 400
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Then</span>
-
-                                    
-                                        I should validate the response as Email is missing
+                                        I will create connection between sourceDemo and destinationDemo when there is no connection
                                         
                                     
 
@@ -2965,7 +1951,7 @@ input#darkCheck:checked ~ label>svg#moon {
                     ],
                     datasets: [{
                         data: [
-                            5,
+                            2,
                             0,
                             0,
                             0,

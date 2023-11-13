@@ -1,5 +1,6 @@
 const reporter = require('multiple-cucumber-html-reporter');
 const { request, settings } = require("pactum");
+const { $ } = require("@wdio/globals");
 const chai = require('chai');
 const fs = require('fs');
 require('dotenv').config();

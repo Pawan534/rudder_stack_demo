@@ -1,5 +1,4 @@
-require('dotenv').config();
-envVariable = process.env
+const { $ } =  require("@wdio/globals");
 const { request } = require("pactum");
 
 
@@ -7,39 +6,28 @@ const rudderTestDataSetup = {
 
     validLoginData() {
         userLogin = {
-            "email": envVariable.QC_LOGIN_EMAIL,
-            "password": envVariable.QC_LOGIN_PWD
+            "email": global.envVar.QC_LOGIN_EMAIL,
+            "password": global.envVar.QC_LOGIN_PWD
         }
-        console.log(userLogin);
         return userLogin
     },
-
     defaultHeader() {
         header = {
             'Content-Type': 'application/json'
         }
         return header
     },
-
     setDefaultEndpoint(tempUrl) {
         request.setBaseUrl(tempUrl)
     },
-
-    reqHeader() {
-        header = {
-            'Content-Type': 'application/json'
-        }
-        return header
-    },
-
     setAuth() {
-        request.setBasicAuth(envVariable.QC_AUTH_KEY, '')
+        request.setBasicAuth(global.envVar.QC_AUTH_KEY, '')
     },
 
-    invalidLoginReq(page) {
+    invalidLoginReq(email, password) {
         reqBody = {
-            "email": (page === "email") ? "test@test.com" : ((page === "empty email") ? "" : envVariable.QC_LOGIN_EMAIL),
-            "password": (page === "password") ? "test1234" : ((page === "empty password") ? "" : envVariable.QC_LOGIN_PWD)
+            "email": email,
+            "password": password
         }
         return reqBody
     },

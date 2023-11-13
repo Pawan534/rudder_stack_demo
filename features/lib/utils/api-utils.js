@@ -6,9 +6,6 @@ Before(() => {
     spec = pactum.spec();
 });
 
-require('dotenv').config();
-const envVariable = process.env
-
 const response = {
 
     async postRequest(reqPath, reqHeaders, reqBody, statusCode) {
@@ -24,14 +21,13 @@ const response = {
         } catch (error) {
             throw new Error("Please enter valid request", resp);
         }
-        console.log(resp)
         return resp
     },
 
     async getRequest(reqPath, reqHeaders, statusCode) {
 
         const resp = await spec
-            .get(envVariable.QC_API_URL + reqPath)
+            .get(global.envVar.QC_API_URL + reqPath)
             .returns('res.body')
         try {
             spec.toss();
@@ -39,7 +35,6 @@ const response = {
         } catch (error) {
             throw new Error("Please enter valid request", resp);
         }
-
         return resp
     }
 }

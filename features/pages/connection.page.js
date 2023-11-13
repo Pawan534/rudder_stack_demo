@@ -5,32 +5,32 @@ const Page = require('./page');
  * sub page containing specific selectors and methods for a specific page
  */
 class ConnectionPage extends Page {
-    
+
     /**
      * define selectors using getter methods
      */
-    get pageHeaderEle () {
+    get pageHeaderEle() {
         return $('//h3[text()="Connections"]');
     }
 
-    get sourceListEles () {
+    get sourceListEles() {
         return $('//div[@id="sources-list"]//div[@class="p-t-md"]/div');
     }
 
-    get destinationListEles () {
+    get destinationListEles() {
         return $('//div[@id="destinations-list"]//div[@class="p-t-md"]/div');
     }
 
 
-    async clickOnSourceByName (tempName) {
+    async clickOnSourceByName(tempName) {
         // this.sourceListEleByName(tempName).click();
         await $(`//span[text()="${tempName}"]`).isDisplayed();
         await $(`//span[text()="${tempName}"]`).click();
     }
-  
-    async destinationListEleByName (tempName) {
+
+    destinationListEleByName(tempName) {
         return $(`//div[@id="destinations-list"]//div[@class="p-t-md"]/div//span[text()="${tempName}"]`);
-    }   
+    }
 
 }
 

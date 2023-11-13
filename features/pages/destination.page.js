@@ -21,8 +21,8 @@ class Destination extends Page {
     }
 
     async getDeliveryFailedCount (countType) {
-        (await $(`//div[text()="${countType}"]/..//span`)).isDisplayed
-       return (await $(`//div[text()="${countType}"]/..//span`)).getText
+       await $(`//div[text()="${countType}"]/..//span`).isDisplayed()
+       return await $(`//div[text()="${countType}"]/..//span`).getText()
     }
 
  
